@@ -1,7 +1,7 @@
 import React from "react";
 import "./sendingRequestStyle.css";
 
-const SendingRequestAnimation = () => {
+const SendingRequestAnimation = ({text}) => {
   return (
     <div className="sending-request-page bg-yellow-400">
       <div className="body">
@@ -22,8 +22,8 @@ const SendingRequestAnimation = () => {
         <span></span>
         <span></span>
       </div>
-      <h1 className="text-3xl">
-        Sending Request for <i>Admin</i> Role....
+      <h1 className="text-3xl text-center font-extrabold">
+      {text}
       </h1>
     </div>
   );

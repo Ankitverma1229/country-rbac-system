@@ -127,7 +127,7 @@ const Header = () => {
                 label="Dashboard"
                 onClick={() => {
                   setIsHeaderOpen(false);
-                  navigate("/home/dashboard");
+                  navigate("/home");
                 }}
               />
               {isAdminOrSuperAdmin && (
@@ -174,7 +174,8 @@ const Header = () => {
         </header>
         {isRequesting && (
           <div className="fixed inset-0 bg-sky-400 bg-opacity-20 z-50 flex justify-center items-center">
-            <SendingRequestAnimation />
+        
+            <SendingRequestAnimation text = { <>Sending Request for <i>Admin</i> Role....</>}/>
           </div>
         )}
       </div>

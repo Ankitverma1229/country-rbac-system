@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "../Components/Sidebar/Sidebar";
 import Header from "../Components/Header/Header";
 import CountryModalForm from "../Components/Forms/CountryModalForm";
 import { useDispatch, useSelector } from "react-redux";
 import { verfiyUser } from "../Services/AuthServices";
+import Dashboard from "./Dashboard";
 
 const Homepage = () => {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { isModalOpen, image } = useSelector((state) => state.user);
 
   const toggleSidebar = () => setIsSidebarVisible((prev) => !prev);
@@ -20,9 +20,12 @@ const Homepage = () => {
 
   useEffect(() => {
     getUserDetails();
-    navigate("/home/dashboard");
   }, []);
 
+  const location = useLocation();
+
+  // Check if the current location has an outlet (nested route) or not
+  const isOutletPresent = location.pathname !== "/home";
   return (
     <>
       <div className="flex h-screen overflow-hidden">
@@ -37,9 +40,9 @@ const Homepage = () => {
           }`}
         >
           <Header toggleSidebar={toggleSidebar} />
-          <main>
-            <Outlet />
-          </main>
+          {!isOutletPresent && <Dashboard />}
+
+          <main>{isOutletPresent && <Outlet />}</main>
           {isModalOpen && <CountryModalForm />}
         </div>
       </div>

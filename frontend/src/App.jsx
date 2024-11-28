@@ -17,7 +17,7 @@ function App() {
         </ProtectedRoute>
       }
       >
-        <Route path="dashboard" element={<Dashboard />} />
+        {/* <Route path="dashboard" element={<Dashboard />} /> */}
         <Route path="users" element={<UserDetailsPage />} />
         <Route path="countries" element={<CountryTableSection />} />
       </Route>

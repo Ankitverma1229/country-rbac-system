@@ -93,7 +93,7 @@ const Sidebar = ({ isSidebarVisible, toggleSidebar }) => {
               icon={<LayoutDashboard />}
               label="Dashboard"
               isSidebarVisible={isSidebarVisible}
-              onClick={() => navigate("/home/dashboard")}
+              onClick={() => navigate("/home")}
             />
             {isAdminOrSuperAdmin && (
               <SidebarItem
@@ -136,7 +136,7 @@ const Sidebar = ({ isSidebarVisible, toggleSidebar }) => {
       </aside>
       {isRequesting && (
         <div className="fixed inset-0 bg-sky-400 bg-opacity-20 z-50 flex justify-center items-center">
-          <SendingRequestAnimation />
+          <SendingRequestAnimation text = { <>Sending Request for <i>Admin</i> Role....</>} />
         </div>
       )}
     </>

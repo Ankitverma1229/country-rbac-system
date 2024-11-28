@@ -14,6 +14,22 @@ const AuthPage = () => {
         <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-6">
           {isLogin ? "Sign In" : "Create Account"}
         </h2>
+        {isLogin ? (
+          <p className="text-sm text-gray-500 text-center mb-6">
+            <span className="block mb-2">
+              <span className="font-semibold">Admin Test ID:</span>{" "}
+              admin@gmail.com |<span className="font-semibold"> Password:</span>{" "}
+              admin@123
+            </span>
+            <span>
+              <span className="font-semibold">User Test ID:</span>{" "}
+              user@gmail.com |<span className="font-semibold"> Password:</span>{" "}
+              pass@123
+            </span>
+          </p>
+        ) : (
+          ""
+        )}
         <AuthForm isLogin={isLogin} />
         <p className="text-center text-gray-600 mt-6">
           {isLogin ? "Don't have an account?" : "Already have an account?"}{" "}

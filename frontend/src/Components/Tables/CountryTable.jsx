@@ -82,10 +82,10 @@ const CountryTable = ({ data, userRole }) => {
                   {item.country}
                 </td>
                 <td className="px-4 py-2 text-sm md:text-base text-center">
-                  {item.gdp }
+                  {(item.gdp / 1e12)}
                 </td>
                 <td className="px-4 py-2 text-sm md:text-base text-center">
-                  {item.population}
+                  {(item.population / 1e6)}
                 </td>
                 <td className="px-4 py-2 text-sm md:text-base text-center">
                   {item.mainLanguages.join(", ")}

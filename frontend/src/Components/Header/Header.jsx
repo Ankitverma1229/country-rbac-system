@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { PanelLeftOpen, PanelRightOpen, LayoutDashboard, Users, Globe, LogOut, Voicemail, BellIcon, ChevronDownIcon, } from "lucide-react";
 import GeoAccessLogo from "../../../assets/geo-access-logo.png";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { requestForAdminRole } from "../../Services/UserServices";
@@ -96,14 +96,14 @@ const Header = () => {
             }`}
         >
           <div className="flex items-center justify-between px-4 py-2">
-            <div className="flex items-center gap-4">
+            <Link to={'/home'} className="flex items-center gap-4">
               <img
                 src={GeoAccessLogo}
                 alt="GeoAccess Logo"
                 className="h-10 w-8"
               />
               <span className="font-semibold text-xl">GeoAccess</span>
-            </div>
+            </Link>
 
             <div className="flex items-center gap-4">
               <button onClick={toggleHeader}>

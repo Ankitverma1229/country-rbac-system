@@ -102,7 +102,7 @@ const CountryModalForm = () => {
         onClick={handleClose}
       >
         <div
-          className="bg-white p-4 sm:p-6 rounded-lg shadow-lg w-full max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-3xl overflow-y-auto max-h-full"
+          className="bg-white mx-2 mt-8 md:mt-0 md:mx-0 p-4 sm:p-6 rounded-lg shadow-lg w-full  sm:max-w-sm md:max-w-lg lg:max-w-3xl overflow-y-auto max-h-full"
           onClick={(e) => e.stopPropagation()}
         >
           <h3 className="text-lg sm:text-xl font-semibold text-gray-700 mb-4">

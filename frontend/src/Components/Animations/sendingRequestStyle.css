@@ -12,6 +12,12 @@
   margin-left: -20px;
 }
 
+@media (max-width: 768px) {
+  .sending-request-page h1 {
+    left: 12%;
+  }
+}
+
 .sending-request-page a {
   color: #000;
   text-decoration: none;

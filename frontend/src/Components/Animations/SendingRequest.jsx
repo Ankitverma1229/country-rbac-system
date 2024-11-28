@@ -3,7 +3,7 @@ import "./sendingRequestStyle.css";
 
 const SendingRequestAnimation = ({text}) => {
   return (
-    <div className="sending-request-page bg-yellow-400">
+    <div className="sending-request-page ">
       <div className="body">
         <span>
           <span></span>

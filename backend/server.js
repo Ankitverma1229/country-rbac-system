@@ -15,11 +15,13 @@ const clientUrl = process.env.CLIENT_URL;
 const app = express();
 
 app.use(
-  cors({
-    origin: `${clientUrl}`,
-    credentials: true,
-  })
-);
+    cors({
+      origin: clientUrl?.endsWith("/") ? clientUrl.slice(0, -1) : clientUrl,
+      credentials: true,
+    })
+  );
+  
+  
 
 app.use(express.json());
 app.use(cookieParser());

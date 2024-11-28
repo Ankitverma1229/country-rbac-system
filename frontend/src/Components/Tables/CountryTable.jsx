@@ -2,7 +2,11 @@ import React from "react";
 import { deleteCountryDetails } from "../../Services/DataServices";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
-import { setModalState, setSelectedCountry, triggerTableRefresh } from "../../Store/UserSlice";
+import {
+  setModalState,
+  setSelectedCountry,
+  triggerTableRefresh,
+} from "../../Store/UserSlice";
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 import { verfiyUser } from "../../Services/AuthServices";
 
@@ -51,7 +55,7 @@ const CountryTable = ({ data, userRole }) => {
   };
 
   return (
-    <div className="">
+    <div>
       <div className="overflow-x-auto">
         <table className="w-full border-collapse  shadow-md rounded-lg">
           <thead className="bg-gray-200 text-gray-700">
@@ -70,8 +74,9 @@ const CountryTable = ({ data, userRole }) => {
             {data.map((item, index) => (
               <tr
                 key={item._id}
-                className={`hover:bg-gray-100 ${index % 2 === 0 ? "bg-gray-50" : "bg-white"
-                  }`}
+                className={`hover:bg-gray-100 ${
+                  index % 2 === 0 ? "bg-gray-50" : "bg-white"
+                }`}
               >
                 <td className="px-4 py-2 text-sm md:text-base text-center">
                   {item.country}

@@ -21,12 +21,12 @@ const UserDetailsPage = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
+    <div className="p-6  ">
       <h1 className="text-2xl font-bold text-gray-800 mb-6">User Details</h1>
       {loading ? (
         <p className="text-gray-600 text-center">Loading...</p>
       ) : (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto shadow-md rounded-lg">
           <table className="w-full border-collapse bg-white shadow-md rounded-lg">
             <thead className="bg-gray-200 text-gray-700">
               <tr>

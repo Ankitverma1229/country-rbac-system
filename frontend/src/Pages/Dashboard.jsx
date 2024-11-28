@@ -69,7 +69,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="flex flex-col bg-[#dfecf2] pt-3 px-4 md:px-8 pb-5 min-h-screen">
+    <div className="flex flex-col  pt-3 px-4 md:px-8 pb-5 min-h-screen">
       <section id="dashboard-header" className="mb-4">
         <div className="flex flex-wrap items-center justify-between gap-6 md:gap-4">
           <div className="text-left">

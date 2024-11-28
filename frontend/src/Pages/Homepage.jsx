@@ -28,7 +28,7 @@ const Homepage = () => {
   const isOutletPresent = location.pathname !== "/home";
   return (
     <>
-      <div className="flex h-screen overflow-hidden">
+      <div className="flex bg-[#dfecf2] h-screen overflow-hidden">
         <Sidebar
           isSidebarVisible={isSidebarVisible}
           toggleSidebar={toggleSidebar}

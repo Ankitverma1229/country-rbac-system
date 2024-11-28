@@ -31,7 +31,7 @@ const CountryTableSection = () => {
   }, [fetchData, refreshTable]);
 
   return (
-    <section className="p-6 bg-gray-100 min-h-screen">
+    <section className="p-6">
       <h1 className="text-2xl font-bold text-gray-800 mb-6">Country Details</h1>
       <div className="shadow-md rounded-lg ">
         {isLoading ? (

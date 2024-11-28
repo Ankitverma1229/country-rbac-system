@@ -51,7 +51,7 @@ const CountryTable = ({ data, userRole }) => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="">
       <div className="overflow-x-auto">
         <table className="w-full border-collapse  shadow-md rounded-lg">
           <thead className="bg-gray-200 text-gray-700">

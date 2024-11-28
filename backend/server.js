@@ -9,16 +9,19 @@ import userRoutes from "./routes/userRoutes.js";
 
 dotenv.config();
 connectDb();
-const app = express();
 const PORT = process.env.PORT || 5000;
-const CORSURL = process.env.LOCAL_URL;
+const clientUrl = process.env.CLIENT_URL;
+
+const app = express();
 
 app.use(
   cors({
-    origin: `${CORSURL}`,
+    origin: `${clientUrl}`,
+    methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
 );
+
 app.use(express.json());
 app.use(cookieParser());
 

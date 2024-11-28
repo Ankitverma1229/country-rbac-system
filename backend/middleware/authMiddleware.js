@@ -4,7 +4,7 @@ import User from '../models/User.js';
 export const authenticate = async (req, res, next) => {
     try {
         // Get token from cookies
-        const token = req.cookies.token;
+        const token = req.cookies.token || req.cookies.vercel-feature-flags;
         if (!token) {
             return res.status(403).json({ success: false, message: 'Login before accessing this feature' });
         }

@@ -15,13 +15,15 @@ const clientUrl = process.env.CLIENT_URL;
 const app = express();
 
 app.use(
-    cors({
-      origin: clientUrl?.endsWith("/") ? clientUrl.slice(0, -1) : clientUrl,
-      credentials: true,
-    })
-  );
-  
-  
+  cors({
+    origin: clientUrl?.endsWith("/") ? clientUrl.slice(0, -1) : clientUrl,
+    credentials: true,
+  })
+);
+
+const baseURL = isProduction
+  ? "https://country-rbac-system.onrender.com"
+  : `http://localhost:${PORT}`;
 
 app.use(express.json());
 app.use(cookieParser());
@@ -39,4 +41,12 @@ app.use("/api/user", userRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server started at ${PORT}`);
+  setInterval(async () => {
+    try {
+      const response = await axios.get(`${baseURL}`);
+      console.log("Self-ping successful:", response.data);
+    } catch (error) {
+      console.error("Error during self-ping:", error.message);
+    }
+  }, 600000); // 10 minutes in milliseconds
 });

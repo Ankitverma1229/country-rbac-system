@@ -21,6 +21,7 @@ app.use(
   })
 );
 
+const isProduction = process.env.NODE_ENV === "production";
 const baseURL = isProduction
   ? "https://country-rbac-system.onrender.com"
   : `http://localhost:${PORT}`;
